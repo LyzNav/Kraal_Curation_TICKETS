@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Kraal Curation Tickets</title>
-<meta name="description" content="Tickets and program for Kraal Curation go live on 15 December 2026.">
+<meta name="description" content="Tickets and program for Kraal Curation go live on 15 November 2026.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Silkscreen:wght@400;700&family=VT323&display=swap">
@@ -159,8 +159,8 @@ html, body { height: 100%; }
 .screen > canvas.bg { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; image-rendering: pixelated; }
 .screen .nav { padding-top: 12px; }
 .screen .nav .title { color: #fff; text-shadow: 2px 2px 0 var(--purple); }
-.screen .nav a.lnk { color: #fff; text-shadow: 1px 1px 0 var(--purple); }
-.screen .nav a.lnk:hover { color: #ffd23a; }
+.screen .nav .title { margin: 0; }
+.screen .nav .lnk { font-family: var(--f-pixel); font-size: clamp(.95rem, 1.5vw, 1.32rem); color: #fff; text-shadow: 1px 1px 0 var(--purple); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
 .stage { flex: 1; display: grid; place-items: center; padding-block: 8px 16px; }
 .soonwin { width: min(560px, 100%); }
 .soon-body { justify-items: center; text-align: center; gap: 10px; padding: 18px 20px 18px; }
@@ -177,27 +177,26 @@ html, body { height: 100%; }
 <body>
 <div class="screen">
   <canvas class="bg" id="bg" aria-hidden="true"></canvas>
-  <nav class="nav gutter" aria-label="Main">
-    <a class="title" href="https://lyznav.github.io/Kraal_Curation/">KRAAL CURATION</a>
-    <ul>
-      <li><a class="lnk" href="https://lyznav.github.io/Kraal_Curation/">home</a></li>
-      <li><a class="lnk" href="https://lyznav.github.io/Kraal_Curation/#lineup">lineup</a></li>
-      <li><a class="lnk" href="https://lyznav.github.io/Kraal_Curation/#creatives">creatives</a></li>
-      <li><a class="lnk" href="./" aria-current="page">tickets</a></li>
+  <header class="nav gutter">
+    <p class="title">KRAAL CURATION</p>
+    <ul aria-label="Kraal Curation">
+      <li><span class="lnk">home</span></li>
+      <li><span class="lnk">lineup</span></li>
+      <li><span class="lnk">creatives</span></li>
+      <li><span class="lnk">tickets</span></li>
     </ul>
-  </nav>
+  </header>
 
   <main class="stage gutter">
     <div class="chrome soonwin" role="group" aria-labelledby="soon-h">
       <div class="tb"><span class="tb-ico" data-g="ticket"></span><span class="t">BoxOffice.exe</span><span class="tbtn" aria-hidden="true">_</span><span class="tbtn" aria-hidden="true">×</span></div>
       <div class="wb soon-body">
         <span class="soon-ico" data-g="ticket"></span>
-        <h1 id="soon-h"><span>tickets &amp; program</span><span>go live</span><em>15 Dec 2026</em></h1>
+        <h1 id="soon-h"><span>tickets &amp; program</span><span>go live</span><em>15 Nov 2026</em></h1>
         <p class="soon-count well"><output id="soon-left">—</output></p>
-        <p>Check back on 15 December for tickets and the full program.</p>
+        <p>Check back on 15 November for tickets and the full program.</p>
         <div class="soon-btns">
-          <a class="btn95 default" href="https://lyznav.github.io/Kraal_Curation/#tickets">Get updates</a>
-          <a class="btn95" href="https://lyznav.github.io/Kraal_Curation/">Back to home</a>
+          <a class="btn95 default" href="https://www.kraalstories.com" target="_blank" rel="noopener">Visit Kraal Stories</a>
         </div>
       </div>
       <div class="status"><span>Box office closed</span><span class="fit">Kharkams, Namaqualand</span></div>
@@ -224,8 +223,8 @@ html, body { height: 100%; }
    email      Box office email address, e.g. "tickets@example.com".
    ===================================================================== */
 const CONFIG = {
-  salesOpen: false,          // false shows "Tickets go live on 15 December". Set true to open the box office.
-  salesDate: "2026-12-15",   // the day tickets go live (year-month-day)
+  salesOpen: false,          // false shows the "tickets go live" notice. Set true to open the box office.
+  salesDate: "2026-11-15",   // the day tickets go live (year-month-day)
   draft: true,
   paymentUrl: "",
   whatsapp: "",
