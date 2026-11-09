@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kraal Curation Tickets</title>
+<meta name="description" content="Tickets and program for Kraal Curation go live on 15 December 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Silkscreen:wght@400;700&family=VT323&display=swap">
+<style>
+/* Shared retro look for the Kraal Curation box office: typewriter paper on top, dithered dusk desktop below, Win95 windows. */
+:root {
+  color-scheme: light;
+  --paper: #ffffff;
+  --ink: #000000;
+  --head: #323232;
+  --rust: #af5340;
+  --tag: #d2624b;
+  --purple: #401f71;
+  --purple-2: #7a52b8;
+  --win: #c3c3c3;
+  --win-hi: #ffffff;
+  --win-lo: #7d7d7d;
+  --win-dk: #1c1c1c;
+  --select: #1f3fa8;
+  --hilite: #fff6c9;
+  --ok: #2f7d3a;
+  --err: #b0261c;
+
+  --f-type: "Courier Prime", "Courier New", Courier, monospace;
+  --f-head: "Courier Prime", "Courier New", Courier, monospace;
+  --f-pixel: "Silkscreen", "VT323", "Courier New", monospace;
+  --f-label: "VT323", "Courier New", monospace;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--f-type); font-size: 1rem; line-height: 1.5;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='34' viewBox='0 0 11 17' shape-rendering='crispEdges'%3E%3Cpath d='M0 0h1v15H0zM1 1h1v1H1zM2 2h1v1H2zM3 3h1v1H3zM4 4h1v1H4zM5 5h1v1H5zM6 6h1v1H6zM7 7h1v1H7zM8 8h1v1H8zM9 9h1v1H9zM5 10h5v1H5zM5 11h1v1H5zM6 12h1v2H6zM7 14h1v2H7zM1 13h1v1H1zM2 12h1v1H2zM3 11h1v1H3zM4 10h1v1H4z' fill='%23000'/%3E%3Cpath d='M1 2h1v11H1zM2 3h1v9H2zM3 4h1v7H3zM4 5h1v5H4zM5 6h1v4H5zM6 7h1v3H6zM7 8h1v2H7zM8 9h1v1H8z' fill='%23ffd23a'/%3E%3C/svg%3E") 0 0, auto;
+}
+a, button, label[for], select, [role="tab"] { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='34' viewBox='0 0 11 17' shape-rendering='crispEdges'%3E%3Cpath d='M0 0h1v15H0zM1 1h1v1H1zM2 2h1v1H2zM3 3h1v1H3zM4 4h1v1H4zM5 5h1v1H5zM6 6h1v1H6zM7 7h1v1H7zM8 8h1v1H8zM9 9h1v1H9zM5 10h5v1H5zM5 11h1v1H5zM6 12h1v2H6zM7 14h1v2H7zM1 13h1v1H1zM2 12h1v1H2zM3 11h1v1H3zM4 10h1v1H4z' fill='%23000'/%3E%3Cpath d='M1 2h1v11H1zM2 3h1v9H2zM3 4h1v7H3zM4 5h1v5H4zM5 6h1v4H5zM6 7h1v3H6zM7 8h1v2H7zM8 9h1v1H8z' fill='%23ffd23a'/%3E%3C/svg%3E") 0 0, pointer; }
+:focus-visible { outline: 2px dotted var(--purple); outline-offset: 2px; }
+p { margin: 0; }
+h1, h2, h3 { margin: 0; font-weight: 400; text-wrap: balance; }
+[hidden] { display: none !important; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.gutter {
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+/* ---------- Top: logo, nav, two-tone heading ---------- */
+.paper-top { display: flex; justify-content: space-between; align-items: center; padding-top: 12px; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #6b6b6b; font-family: var(--f-pixel); font-size: 1.1rem; letter-spacing: .1em; }
+.logo [data-g] { width: 34px; height: 34px; display: block; }
+.logo svg { width: 34px; height: 34px; display: block; }
+.secure { display: flex; align-items: center; gap: 6px; font-family: var(--f-pixel); font-size: .62rem; color: var(--purple); }
+.secure svg { width: 18px; height: auto; }
+.nav { display: grid; justify-items: center; gap: 10px; padding-block: 4px 8px; text-align: center; }
+.nav .title { font-family: var(--f-pixel); font-size: clamp(1.25rem, 2.2vw, 1.85rem); color: var(--purple); text-decoration: none; line-height: 1.05; }
+.nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px clamp(18px, 3vw, 44px); }
+.nav a.lnk { position: relative; font-family: var(--f-pixel); font-size: clamp(.95rem, 1.5vw, 1.32rem); color: var(--purple); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
+.nav a.lnk:hover { color: var(--rust); }
+
+
+.headline { position: relative; max-width: 1366px; margin-inline: auto; padding-block: 34px 30px; display: grid; gap: 22px; }
+.headline h1 { font-family: var(--f-type); font-weight: 700; text-transform: uppercase; font-size: clamp(2rem, 4.6vw, 3.6rem); line-height: 1; letter-spacing: .02em; padding-right: 240px; }
+.headline h1 .w1 { display: block; color: var(--head); padding-left: clamp(0px, 6vw, 80px); }
+.headline h1 .w2 { display: block; color: var(--rust); padding-left: clamp(40px, 12vw, 160px); }
+.tag {
+  position: absolute; top: 0; right: max(16px, env(safe-area-inset-right, 0px)); width: clamp(160px, 22vw, 300px);
+  background: var(--tag); color: #000; font: 700 clamp(1.05rem, 1.8vw, 1.5rem) var(--f-type);
+  padding: clamp(48px, 6vw, 84px) 18px 12px; box-shadow: 4px 4px 0 rgba(0,0,0,.18);
+}
+.lede { max-width: 46rem; font-size: clamp(1rem, 1.4vw, 1.2rem); display: grid; gap: .8em; }
+.draft { display: inline-flex; align-items: center; gap: 8px; justify-self: start; font-family: var(--f-pixel); font-size: .7rem; color: #000; background: #ffd23a; padding: 4px 10px; border: 2px solid #000; box-shadow: 3px 3px 0 #000; }
+@media (max-width: 760px) {
+  .logo span { display: none; }
+  .headline h1 { padding-right: 0; }
+  .headline h1 .w1 { padding-left: 0; }
+  .headline h1 .w2 { padding-left: 18%; }
+  .tag { position: static; width: auto; justify-self: start; padding: 22px 16px 8px; order: -1; }
+}
+
+/* ---------- Desktop band ---------- */
+.desk { position: relative; isolation: isolate; overflow: hidden; background: #2b2140; padding-block: clamp(28px, 4vw, 56px) clamp(40px, 6vw, 80px); }
+.desk > canvas.bg { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; image-rendering: pixelated; }
+.desk-inner { max-width: 1240px; margin-inline: auto; }
+
+/* ---------- Win95 chrome ---------- */
+.chrome {
+  background: var(--win); color: #000; font-family: var(--f-type);
+  border: 2px solid; border-color: var(--win-hi) var(--win-dk) var(--win-dk) var(--win-hi);
+  box-shadow: inset -1px -1px 0 var(--win-lo), inset 1px 1px 0 #e6e6e6, 5px 5px 0 rgba(0,0,0,.35);
+}
+.tb {
+  display: flex; align-items: center; gap: 6px; padding: 3px 3px 3px 6px; color: #fff;
+  background: linear-gradient(90deg, var(--purple), var(--purple-2));
+  font-family: var(--f-pixel); font-size: .78rem; user-select: none;
+}
+.tb .t { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tb .tb-ico { width: 16px; height: 16px; flex: none; display: grid; place-items: center; }
+.tb .tb-ico svg { width: 16px; height: auto; display: block; }
+.tbtn {
+  width: 22px; height: 20px; display: grid; place-items: center; padding: 0; flex: none;
+  background: var(--win); color: #000; font: 700 .85rem/1 var(--f-type);
+  border: 2px solid; border-color: var(--win-hi) var(--win-dk) var(--win-dk) var(--win-hi);
+}
+.menubar { display: flex; gap: 2px; padding: 2px 4px; font-size: .9rem; }
+.menubar span { padding: 1px 8px; }
+.menubar span::first-letter { text-decoration: underline; }
+.wb { padding: 10px; display: grid; gap: 10px; }
+.btn95 {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  font: 700 .95rem var(--f-type); padding: 6px 16px; min-height: 34px; background: var(--win); color: #000; text-decoration: none;
+  border: 2px solid; border-color: var(--win-hi) var(--win-dk) var(--win-dk) var(--win-hi);
+  box-shadow: inset -1px -1px 0 var(--win-lo);
+}
+.btn95:active:not(:disabled) { border-color: var(--win-dk) var(--win-hi) var(--win-hi) var(--win-dk); box-shadow: inset 1px 1px 0 var(--win-lo); }
+.btn95.default { box-shadow: inset -1px -1px 0 var(--win-lo), 0 0 0 2px #000; }
+.btn95:disabled, .btn95[aria-disabled="true"] { color: var(--win-lo); text-shadow: 1px 1px 0 #fff; pointer-events: none; }
+.btn95 svg { width: 18px; height: auto; }
+.field95 {
+  font: 1rem var(--f-type); padding: 7px 8px; background: #fff; color: #000; min-width: 0; width: 100%;
+  border: 2px solid; border-color: var(--win-lo) var(--win-hi) var(--win-hi) var(--win-lo);
+  box-shadow: inset 1px 1px 0 var(--win-dk); border-radius: 0;
+}
+.field95[aria-invalid="true"] { background: #ffecea; }
+.well { background: #fff; border: 2px solid; border-color: var(--win-lo) var(--win-hi) var(--win-hi) var(--win-lo); box-shadow: inset 1px 1px 0 var(--win-dk); }
+.status { display: flex; gap: 4px; padding: 3px 4px 4px; font-size: .8rem; }
+.status span { flex: 1; min-width: 0; padding: 1px 6px; border: 1px solid; border-color: var(--win-lo) var(--win-hi) var(--win-hi) var(--win-lo); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.status span.fit { flex: none; }
+.rule { border: 0; border-top: 1px solid var(--win-lo); border-bottom: 1px solid var(--win-hi); margin: 2px 0; }
+
+/* ---------- Taskbar ---------- */
+.taskbar {
+  position: relative; display: flex; align-items: center; gap: 8px; padding-block: 4px;
+  background: var(--win); border-top: 2px solid var(--win-hi); box-shadow: inset 0 1px 0 #e6e6e6; font-family: var(--f-type); font-size: .9rem; z-index: 5;
+}
+.start { display: flex; align-items: center; gap: 6px; font-family: var(--f-pixel); font-size: .8rem; padding: 3px 10px; }
+.start [data-g], .start svg { width: 18px; height: 18px; display: block; }
+.task-mid { flex: 1; min-width: 0; padding: 3px 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; border: 1px solid; border-color: var(--win-lo) var(--win-hi) var(--win-hi) var(--win-lo); }
+.tray { display: flex; gap: 12px; padding: 3px 10px; white-space: nowrap; border: 1px solid; border-color: var(--win-lo) var(--win-hi) var(--win-hi) var(--win-lo); font-variant-numeric: tabular-nums; }
+.startmenu { position: absolute; bottom: 100%; left: max(16px, env(safe-area-inset-left, 0px)); width: 250px; display: flex; }
+.startmenu .side { width: 28px; background: linear-gradient(0deg, var(--purple), var(--purple-2)); color: #fff; writing-mode: vertical-rl; transform: rotate(180deg); font-family: var(--f-pixel); font-size: .8rem; padding: 8px 4px; }
+.rows { list-style: none; margin: 0; padding: 4px; display: grid; gap: 2px; flex: 1; }
+.rows a { display: flex; gap: 10px; align-items: center; padding: 4px 6px; color: #000; text-decoration: none; }
+.rows a:hover, .rows a:focus-visible { background: var(--select); color: #fff; outline: none; }
+.rows .mini { width: 20px; height: 20px; flex: none; display: grid; place-items: center; }
+.rows .mini svg { width: 20px; height: auto; }
+@media (max-width: 560px) { .task-mid { display: none; } }
+
+/* One slide: the whole page is a single desktop screen, like the Canva pages. */
+html, body { height: 100%; }
+.screen { position: relative; isolation: isolate; min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; background: #2b2140; overflow: hidden; }
+.screen > canvas.bg { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; image-rendering: pixelated; }
+.screen .nav { padding-top: 12px; }
+.screen .nav .title { color: #fff; text-shadow: 2px 2px 0 var(--purple); }
+.screen .nav a.lnk { color: #fff; text-shadow: 1px 1px 0 var(--purple); }
+.screen .nav a.lnk:hover { color: #ffd23a; }
+.stage { flex: 1; display: grid; place-items: center; padding-block: 8px 16px; }
+.soonwin { width: min(560px, 100%); }
+.soon-body { justify-items: center; text-align: center; gap: 10px; padding: 18px 20px 18px; }
+.soon-ico { width: 64px; transform: rotate(-8deg); }
+.soon-ico svg { width: 64px; height: auto; display: block; filter: drop-shadow(3px 3px 0 rgba(0,0,0,.3)); }
+.soon-body h1 { font: 700 clamp(1.35rem, 3.4vw, 2rem)/1.1 var(--f-type); text-transform: uppercase; display: grid; gap: 2px; }
+.soon-body h1 span { color: var(--head); }
+.soon-body h1 em { font-style: normal; color: var(--rust); }
+.soon-count { padding: 6px 16px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.soon-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding-top: 4px; }
+.screen .taskbar { margin-top: auto; }
+</style>
+</head>
+<body>
+<div class="screen">
+  <canvas class="bg" id="bg" aria-hidden="true"></canvas>
+  <nav class="nav gutter" aria-label="Main">
+    <a class="title" href="https://lyznav.github.io/Kraal_Curation/">KRAAL CURATION</a>
+    <ul>
+      <li><a class="lnk" href="https://lyznav.github.io/Kraal_Curation/">home</a></li>
+      <li><a class="lnk" href="https://lyznav.github.io/Kraal_Curation/#lineup">lineup</a></li>
+      <li><a class="lnk" href="https://lyznav.github.io/Kraal_Curation/#creatives">creatives</a></li>
+      <li><a class="lnk" href="./" aria-current="page">tickets</a></li>
+    </ul>
+  </nav>
+
+  <main class="stage gutter">
+    <div class="chrome soonwin" role="group" aria-labelledby="soon-h">
+      <div class="tb"><span class="tb-ico" data-g="ticket"></span><span class="t">BoxOffice.exe</span><span class="tbtn" aria-hidden="true">_</span><span class="tbtn" aria-hidden="true">×</span></div>
+      <div class="wb soon-body">
+        <span class="soon-ico" data-g="ticket"></span>
+        <h1 id="soon-h"><span>tickets &amp; program</span><span>go live</span><em>15 Dec 2026</em></h1>
+        <p class="soon-count well"><output id="soon-left">—</output></p>
+        <p>Check back on 15 December for tickets and the full program.</p>
+        <div class="soon-btns">
+          <a class="btn95 default" href="https://lyznav.github.io/Kraal_Curation/#tickets">Get updates</a>
+          <a class="btn95" href="https://lyznav.github.io/Kraal_Curation/">Back to home</a>
+        </div>
+      </div>
+      <div class="status"><span>Box office closed</span><span class="fit">Kharkams, Namaqualand</span></div>
+    </div>
+  </main>
+
+  <footer class="taskbar gutter">
+    <a class="btn95 start" href="https://www.kraalstories.com" target="_blank" rel="noopener"><span data-g="logo"></span>KRAAL</a>
+    <div class="task-mid">Die Grond Onthou / The Land Remembers · 12–18 Dec 2026 · Kharkams, Namaqualand</div>
+    <div class="tray"><span id="countdown"></span><span id="clock"></span></div>
+  </footer>
+</div>
+
+<script>
+/* =====================================================================
+   KRAAL CURATION BOX OFFICE: SETTINGS YOU CAN CHANGE
+   ---------------------------------------------------------------------
+   salesOpen  false shows only a "tickets go live" notice on the tickets page.
+   salesDate  the day tickets go live.
+   draft      true shows a "prices to be confirmed" sticker. Set false when prices are final.
+   paymentUrl Your payment link (e.g. a Quicket, Yoco, PayFast or SnapScan link).
+              Leave "" until you have one; checkout then offers WhatsApp/email booking.
+   whatsapp   Box office WhatsApp number in international form, no + or spaces, e.g. "27821234567".
+   email      Box office email address, e.g. "tickets@example.com".
+   ===================================================================== */
+const CONFIG = {
+  salesOpen: false,          // false shows "Tickets go live on 15 December". Set true to open the box office.
+  salesDate: "2026-12-15",   // the day tickets go live (year-month-day)
+  draft: true,
+  paymentUrl: "",
+  whatsapp: "",
+  email: "",
+  maxPerItem: 10
+};
+
+/* Prices are in rand. price: 0 means free but booking needed. sale: false means not on sale yet. */
+const ITEMS = [
+  { id: "pass-full", group: "pass", kind: "Festival pass", title: "Full Festival Pass", desc: "One seat at every ticketed show, 12–16 December.", price: 300 },
+  { id: "pass-student", group: "pass", kind: "Festival pass", title: "Student & Pensioner Pass", desc: "Same as the full pass. Bring your student card or ID.", price: 150 },
+
+  { id: "opening", group: "opening", day: 12, time: "15h00", kind: "Opening", title: "Kraal: Inside/Outside · Memory Boks: Ons Kom Vandaan", venue: "Kharkams High School (Hostel)", price: 50 },
+  { id: "wanne", group: "theatre", day: 12, time: "15h00", kind: "Filmed theatre", title: "Wanne jy my naam hoor", desc: "by Darion Adams", venue: "Kharkams High School (Hostel)", price: 40 },
+
+  { id: "clay", group: "children", day: 14, time: "11h00", kind: "For children", title: "Clay-making workshop", venue: "Church Hall", price: 0 },
+  { id: "inwagvan", group: "theatre", day: 14, time: "14h30", kind: "Theatre", title: "In Wag Van", desc: "with Gladwin van Niekerk and Lynette du Plessis", venue: "Kharkams Community Hall", price: 80 },
+  { id: "variations", group: "film", day: 14, time: "16h30", kind: "Feature film", title: "Variations on a Theme", venue: "Kharkams Community Hall", price: 50 },
+
+  { id: "crafts", group: "children", day: 15, time: "10h00", kind: "For children", title: "Arts & crafts with recycled materials", venue: "Church Hall", price: 0 },
+  { id: "wonde", group: "theatre", day: 15, time: "14h30", kind: "Theatre", title: "Wonde", desc: "by Byron Klassen", venue: "Kharkams Community Hall", price: 80 },
+  { id: "shorts", group: "film", day: 15, time: "16h30", kind: "Short films", title: "Short films, curated by Cleveland Hopp", venue: "Kharkams Community Hall", price: 40 },
+  { id: "alwat", group: "film", day: 15, time: "19h30", kind: "Feature film", title: "Al Wat Ek Weet", venue: "Kharkams Community Hall", price: 50 },
+
+  { id: "moviemorning", group: "children", day: 16, time: "10h00", kind: "For children", title: "Movie-morning for young audiences", venue: "Church Hall", price: 0 },
+  { id: "story", group: "children", day: 16, time: "10h00", kind: "Story-reading", title: "Story-reading for young audiences", desc: "with Miche Van Wyk", venue: "Kharkams Community Hall", price: 0 },
+  { id: "elders", group: "workshop", day: 16, time: "14h30", kind: "Workshop", title: "Oral storytelling: heritage and the origins of Kharkams", venue: "Rainbow Centre", note: "Only for elders aged 60+", price: 0 },
+  { id: "process", group: "workshop", day: 16, time: "14h30", kind: "Work in process", title: "Work-in-Process film", venue: "Kharkams Community Hall", price: 30 },
+  { id: "notes", group: "film", day: 16, time: "19h00", kind: "Feature film", title: "Notes from the Underground", venue: "Kharkams Community Hall", price: 50 },
+
+  { id: "closing", group: "closing", kind: "Celebration", title: "Closing celebration with live DJs", desc: "The evening before the Talent Competition.", venue: "Kharkams", price: 0, sale: false, when: "Date TBA" },
+  { id: "talent", group: "closing", kind: "Competition", title: "Kraal Talent Competition", venue: "Kharkams", price: 0, sale: false, when: "Date TBA" }
+];
+const DAYS = { 12: "Saturday", 14: "Monday", 15: "Tuesday", 16: "Wednesday" };
+const BY_ID = Object.fromEntries(ITEMS.map(i => [i.id, i]));
+
+/* ---------------- Helpers ---------------- */
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const money = n => n === 0 ? "FREE" : "R" + n.toLocaleString("en-ZA");
+const whenOf = i => i.when || (i.day ? `${i.day} Dec ${i.time}` : "12–16 Dec");
+function cartLines(cart) {
+  return Object.entries(cart).filter(([id, q]) => BY_ID[id] && q > 0)
+    .map(([id, q]) => ({ item: BY_ID[id], qty: q, sum: BY_ID[id].price * q }));
+}
+const cartTotal = cart => cartLines(cart).reduce((a, l) => a + l.sum, 0);
+const cartCount = cart => cartLines(cart).reduce((a, l) => a + l.qty, 0);
+const encodeCart = cart => cartLines(cart).map(l => `${l.item.id}:${l.qty}`).join(",");
+function decodeCart(s) {
+  const c = {};
+  (s || "").split(",").forEach(p => {
+    const [id, q] = p.split(":"); const n = Math.min(CONFIG.maxPerItem, Math.max(0, parseInt(q, 10) || 0));
+    if (BY_ID[id] && BY_ID[id].sale !== false && n > 0) c[id] = n;
+  });
+  return c;
+}
+function saveCart(cart) { try { sessionStorage.setItem("kraal-cart", encodeCart(cart)); } catch (e) {} }
+function loadCart() {
+  const q = new URLSearchParams(location.search).get("c");
+  if (q !== null) return decodeCart(q);
+  try { return decodeCart(sessionStorage.getItem("kraal-cart")); } catch (e) { return {}; }
+}
+
+/* ---------------- Pixel glyphs ---------------- */
+const PAL = {
+  k: "#15102a", l: "#8fd6ff", b: "#2d97e8", d: "#1b68b5", w: "#ffffff", g: "#a5a5a5", G: "#c3c3c3", W: "#ffffff", D: "#7b7b7b",
+  c: "#c4f0ff", h: "#4a4a4a", s: "#5aa8f0", S: "#bfe2ff", y: "#ffd23a", o: "#c98a3d", N: "#4f9a3a", p: "#2a1d4a",
+  r: "#d8342c", j: "#2f9e55", m: "#7a52b8", e: "#e8901c", f: "#d6d6d6", B: "#2f78d8", L: "#8cc4ff", n: "#3bb54a", u: "#401f71", t: "#999", R: "#d2624b", Y: "#ffe58a"
+};
+function svg(rows) {
+  const H = rows.length, W = rows[0].length; let out = "";
+  rows.forEach((row, y) => {
+    let x = 0;
+    while (x < W) {
+      const ch = row[x]; let run = 1;
+      while (x + run < W && row[x + run] === ch) run++;
+      if (ch !== "." && PAL[ch]) out += `<rect x="${x}" y="${y}" width="${run}" height="1.02" fill="${PAL[ch]}"/>`;
+      x += run;
+    }
+  });
+  return `<svg viewBox="0 0 ${W} ${H}" shape-rendering="crispEdges" aria-hidden="true" focusable="false">${out}</svg>`;
+}
+function grid(w, h, fn) { const r = []; for (let y = 0; y < h; y++) { let s = ""; for (let x = 0; x < w; x++) s += fn(x, y) || "."; r.push(s); } return r; }
+const G = {
+  ticket: () => svg(grid(18, 11, (x, y) => {
+    const notch = (x === 0 || x === 17) && (y >= 4 && y <= 6);
+    if (notch) return "";
+    if (y === 0 || y === 10 || x === 0 || x === 17 || ((x === 1 || x === 16) && y >= 4 && y <= 6)) return "k";
+    if (x === 12) return y % 2 ? "k" : "Y";
+    if (x > 12) return "R";
+    if (y >= 3 && y <= 4 && x >= 3 && x <= 9) return "k";
+    if (y === 7 && x >= 3 && x <= 7) return "o";
+    return "Y";
+  })),
+  basket: () => svg(grid(16, 14, (x, y) => {
+    if (y <= 4 && (Math.abs(Math.hypot(x - 7.5, y - 5) - 4.6) < 0.7)) return "k";
+    if (y === 5) return (x >= 1 && x <= 14) ? "k" : "";
+    if (y > 5 && y < 13) { const inset = Math.floor((y - 5) / 3); if (x < 1 + inset || x > 14 - inset) return ""; if (x === 1 + inset || x === 14 - inset) return "k"; return ((x + y) % 3 === 0) ? "o" : "e"; }
+    if (y === 13) return (x >= 3 && x <= 12) ? "k" : "";
+    return "";
+  })),
+  lock: () => svg(grid(12, 14, (x, y) => {
+    if (y < 6) { const d = Math.hypot(x - 5.5, y - 5.5); return (d > 3 && d < 4.6 && y < 6) ? "k" : ""; }
+    if (y === 6 || y === 13 || x === 1 || x === 10) return (x >= 1 && x <= 10) ? "k" : "";
+    if (x >= 5 && x <= 6 && y >= 8 && y <= 10) return "k";
+    return x > 1 && x < 10 ? "y" : "";
+  })),
+  logo: () => svg(grid(16, 16, (x, y) => {
+    const d = Math.hypot(x - 7.5, y - 7.5), a = Math.atan2(y - 7.5, x - 7.5);
+    if (d < 2.2) return "y";
+    if (d > 4.6 && d < 7.4 && !(a > -0.45 && a < 0.45)) return ((x + y) % 3 === 0) ? "h" : "t";
+    return "";
+  })),
+  globe: () => svg(grid(16, 16, (x, y) => {
+    const dx = x - 7.5, dy = y - 7.5, d = Math.hypot(dx, dy);
+    if (d > 7.4) return ""; if (d > 6.4) return "k";
+    if (dx < -2.5 && dy < -2.5 && d > 4.2) return "w";
+    const land = (Math.sin(x * 1.3 + .6) + Math.cos(y * 1.1 + x * .45)) > .95;
+    if (Math.abs(dy) < .6 || Math.abs(Math.abs(dy) - 3.5) < .5 || Math.abs(dx) < .6) return land ? "N" : "L";
+    return land ? "n" : "B";
+  })),
+  film: () => svg(grid(16, 14, (x, y) => {
+    if (x === 0 || x === 15 || y === 0 || y === 13) return "k";
+    if (x === 1 || x === 14) return (y % 3 === 1) ? "w" : "k";
+    if (x === 2 || x === 13) return "k";
+    if (x >= 6 && x <= 10 && Math.abs(y - 6.5) <= (10 - x) * .62 + .3) return "w";
+    return "p";
+  })),
+  folder: () => svg(["................", ".kkkkk..........", "kllllk..........", "kbbbbbkkkkkkkkk.", "kllllllllllllllk", "klbbbbbbbbbbbbdk", "klbbbbbbbbbbbbdk", "klbbbbbbbbbbbbdk", "klbbbbbbbbbbbbdk", "klbbbbbbbbbbbbdk", "kddddddddddddddk", ".kkkkkkkkkkkkkk."]),
+  chat: () => svg(grid(16, 16, (x, y) => {
+    const d = Math.hypot(x - 8, y - 7);
+    if ((x === 2 && y >= 12 && y <= 14) || (x === 3 && y >= 12 && y <= 13) || (x === 1 && y === 14)) return x === 1 || y === 14 ? "k" : "n";
+    if (d > 6.9) return ""; if (d > 6) return "k";
+    if (y === 7 && (x === 5 || x === 8 || x === 11)) return "w";
+    return "n";
+  })),
+  mail: () => svg(grid(16, 12, (x, y) => {
+    if (y === 0 || y === 11 || x === 0 || x === 15) return "k";
+    if (Math.abs(y - 1 - x * 0.62) < .6 && x <= 8 || Math.abs(y - 1 - (15 - x) * 0.62) < .6 && x >= 7) return "k";
+    return "w";
+  })),
+  warn: () => svg(grid(16, 15, (x, y) => {
+    const half = y * 0.55; const c = 7.5;
+    if (Math.abs(x - c) > half + .4) return "";
+    if (y === 14 || Math.abs(x - c) > half - .7) return "k";
+    if (x >= 7 && x <= 8 && ((y >= 5 && y <= 10) || y === 12)) return "k";
+    return "y";
+  })),
+  check: () => svg(grid(16, 16, (x, y) => {
+    const d = Math.hypot(x - 7.5, y - 7.5);
+    if (d > 7.4) return ""; if (d > 6.4) return "k";
+    if ((y === 8 + (x - 4) && x >= 4 && x <= 6) || (y === 10 - (x - 6) && x >= 6 && x <= 11) || (y === 9 + (x - 4) && x >= 4 && x <= 6) || (y === 11 - (x - 6) && x >= 6 && x <= 11)) return "w";
+    return "j";
+  }))
+};
+function paintGlyphs(root) {
+  (root || document).querySelectorAll("[data-g]").forEach(el => {
+    if (el.dataset.done) return;
+    el.innerHTML = G[el.dataset.g] ? G[el.dataset.g]() : ""; el.dataset.done = "1";
+  });
+}
+
+/* ---------------- Dithered dusk wallpaper ---------------- */
+const BAYER = [[0, 8, 2, 10], [12, 4, 14, 6], [3, 11, 1, 9], [15, 7, 13, 5]];
+function dither(ctx, w, h, levels) {
+  const img = ctx.getImageData(0, 0, w, h), d = img.data, L = levels - 1;
+  for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) {
+    const i = (y * w + x) * 4, t = (BAYER[y & 3][x & 3] + .5) / 16 - .5;
+    for (let c = 0; c < 3; c++) d[i + c] = Math.max(0, Math.min(L, Math.round(d[i + c] / 255 * L + t))) * 255 / L;
+  }
+  ctx.putImageData(img, 0, 0);
+}
+function ridge(ctx, w, h, base, amp, seed, color, domes) {
+  ctx.fillStyle = color; ctx.beginPath(); ctx.moveTo(0, h);
+  for (let x = 0; x <= w; x++) {
+    let y = base + Math.sin(x * .021 + seed) * amp + Math.sin(x * .057 + seed * 2) * amp * .45 + Math.sin(x * .13 + seed) * amp * .12;
+    (domes || []).forEach(([cx, r, ht]) => { const dx = (x - cx) / r; if (Math.abs(dx) < 1) y = Math.min(y, base - ht * Math.sqrt(1 - dx * dx)); });
+    ctx.lineTo(x, y);
+  }
+  ctx.lineTo(w, h); ctx.closePath(); ctx.fill();
+}
+function paintDusk(cv) {
+  const w = 342, h = 192; cv.width = w; cv.height = h; const ctx = cv.getContext("2d");
+  const sky = ctx.createLinearGradient(0, 0, 0, h);
+  sky.addColorStop(0, "#b7b3d9"); sky.addColorStop(.42, "#d9b2c4"); sky.addColorStop(.62, "#f0b48a"); sky.addColorStop(.74, "#f6c46e");
+  ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h);
+  const sun = ctx.createRadialGradient(214, 136, 2, 214, 136, 40);
+  sun.addColorStop(0, "rgba(255,236,170,1)"); sun.addColorStop(.25, "rgba(255,214,130,.7)"); sun.addColorStop(1, "rgba(255,214,130,0)");
+  ctx.fillStyle = sun; ctx.fillRect(0, 0, w, h);
+  ridge(ctx, w, h, 132, 7, 1.3, "#8f6f93", [[70, 26, 18], [250, 34, 14]]);
+  ridge(ctx, w, h, 146, 5, 3.1, "#5e4368", [[150, 22, 14], [310, 18, 10]]);
+  ridge(ctx, w, h, 160, 4, 5.2, "#36263f", [[40, 14, 8]]);
+  ctx.fillStyle = "#231829"; ctx.fillRect(0, 172, w, h - 172);
+  dither(ctx, w, h, 6);
+}
+
+/* ---------------- Taskbar: start menu, clock, countdown ---------------- */
+function initTaskbar() {
+  const btn = document.getElementById("start"), menu = document.getElementById("startmenu");
+  if (btn && menu) {
+    const set = open => { menu.hidden = !open; btn.setAttribute("aria-expanded", String(open)); };
+    btn.addEventListener("click", e => { e.stopPropagation(); set(menu.hidden); });
+    document.addEventListener("click", e => { if (!menu.hidden && !e.target.closest("#startmenu")) set(false); });
+    document.addEventListener("keydown", e => { if (e.key === "Escape" && !menu.hidden) set(false); });
+  }
+  const tick = () => {
+    const now = new Date();
+    document.getElementById("clock").textContent = new Intl.DateTimeFormat("en-ZA", { timeZone: "Africa/Johannesburg", hour: "2-digit", minute: "2-digit", hour12: false }).format(now);
+    const p = new Intl.DateTimeFormat("en-CA", { timeZone: "Africa/Johannesburg", year: "numeric", month: "2-digit", day: "2-digit" }).format(now);
+    const days = Math.round((Date.UTC(2026, 11, 12) - Date.UTC(+p.slice(0, 4), +p.slice(5, 7) - 1, +p.slice(8, 10))) / 86400000);
+    document.getElementById("countdown").textContent = days > 1 ? `${days} days to opening` : days === 1 ? "1 day to opening" : days >= -6 ? "On now in Kharkams" : "Thank you, Kharkams";
+  };
+  tick(); setInterval(tick, 30000);
+}
+
+/* Days until tickets go live */
+const [y, mo, d] = CONFIG.salesDate.split("-").map(Number);
+const today = new Intl.DateTimeFormat("en-CA", { timeZone: "Africa/Johannesburg", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
+const left = Math.round((Date.UTC(y, mo - 1, d) - Date.UTC(+today.slice(0, 4), +today.slice(5, 7) - 1, +today.slice(8, 10))) / 86400000);
+document.getElementById("soon-left").textContent = left > 1 ? `${left} days to go` : left === 1 ? "Tomorrow!" : "Opening today";
+paintDusk(document.getElementById("bg"));
+paintGlyphs(); initTaskbar();
+</script>
+</body>
+</html>
