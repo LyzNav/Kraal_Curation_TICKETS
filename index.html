@@ -147,7 +147,8 @@ h1, h2, h3 { margin: 0; font-weight: 400; text-wrap: balance; }
   background: var(--win); border-top: 2px solid var(--win-hi); box-shadow: inset 0 1px 0 #e6e6e6; font-family: var(--f-type); font-size: .9rem; z-index: 5;
 }
 .start { display: flex; align-items: center; gap: 6px; font-family: var(--f-pixel); font-size: .8rem; padding: 3px 10px; }
-.start [data-g], .start svg { width: 18px; height: 18px; display: block; }
+.start [data-g], .start svg { width: 24px; height: 24px; display: block; }
+.start { padding: 1px 10px 1px 6px; }
 .task-mid { flex: 1; min-width: 0; padding: 3px 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; border: 1px solid; border-color: var(--win-lo) var(--win-hi) var(--win-hi) var(--win-lo); }
 .tray { display: flex; gap: 12px; padding: 3px 10px; white-space: nowrap; border: 1px solid; border-color: var(--win-lo) var(--win-hi) var(--win-hi) var(--win-lo); font-variant-numeric: tabular-nums; }
 .startmenu { position: absolute; bottom: 100%; left: max(16px, env(safe-area-inset-left, 0px)); width: 250px; display: flex; }
@@ -226,7 +227,7 @@ html, body { height: 100%; }
   </main>
 
   <footer class="taskbar gutter">
-    <a class="btn95 start" href="https://www.kraalstories.com" target="_blank" rel="noopener"><span data-g="logo"></span>KRAAL</a>
+    <a class="btn95 start" href="https://www.kraalstories.com" target="_blank" rel="noopener"><span data-g="ks"></span>KRAAL</a>
     <div class="task-mid">Die Grond Onthou / The Land Remembers · 12–18 Dec 2026 · Kharkams, Namaqualand</div>
     <div class="tray"><span id="countdown"></span><span id="clock"></span></div>
   </footer>
@@ -313,7 +314,7 @@ function loadCart() {
 const PAL = {
   k: "#15102a", l: "#8fd6ff", b: "#2d97e8", d: "#1b68b5", w: "#ffffff", g: "#a5a5a5", G: "#c3c3c3", W: "#ffffff", D: "#7b7b7b",
   c: "#c4f0ff", h: "#4a4a4a", s: "#5aa8f0", S: "#bfe2ff", y: "#ffd23a", o: "#c98a3d", N: "#4f9a3a", p: "#2a1d4a",
-  r: "#d8342c", j: "#2f9e55", m: "#7a52b8", e: "#e8901c", f: "#d6d6d6", B: "#2f78d8", L: "#8cc4ff", n: "#3bb54a", u: "#401f71", t: "#999", R: "#d2624b", Y: "#ffe58a"
+  r: "#d8342c", j: "#2f9e55", m: "#7a52b8", e: "#e8901c", f: "#d6d6d6", B: "#2f78d8", L: "#8cc4ff", n: "#3bb54a", u: "#401f71", t: "#999", R: "#d2624b", Y: "#ffe58a", M: "#c16b8e", Q: "#9a4c6f", P: "#e7aac3"
 };
 function svg(rows) {
   const H = rows.length, W = rows[0].length; let out = "";
@@ -361,6 +362,33 @@ const G = {
     if (x >= 5 && x <= 6 && y >= 8 && y <= 10) return "k";
     return x > 1 && x < 10 ? "y" : "";
   })),
+  /* Kraal Stories logo (mauve disc, floating white figure) as a pixel sticker */
+  ks: () => svg([
+    ".........kkkkkk.........",
+    "......kkkMMMMMMkkk......",
+    ".....kkMMMMMMMMMMkk.....",
+    "....kMMMMMMMMMMMMMMk....",
+    "...kMMMMMMMMMMMMwwMMk...",
+    "..kMMMMPMMMMMMMwwwwMMk..",
+    ".kkMMMPMPMMMMMMwwwMMMkk.",
+    ".kMMMPMPMMMMMMMMwMMMMMk.",
+    ".kMMMMPMMMMMMMwwwwMMMMk.",
+    "kMMMMMMMMMMwwwwwwwwMMMMk",
+    "kMMMMMMMwwwwMwwwwwwMQMQk",
+    "kMMMMMwwwMMMwwwwwwMMMMMk",
+    "kMMMwwwMMMMMwwwwwwQwQMQk",
+    "kMMMMMMMMMMwwwwwwMMwMMMk",
+    "kMMMMMMMMMwwwwwwQMQwQMQk",
+    ".kMMMMMMMwwwwwMMMMwMMMk.",
+    ".kMMMMMMwwwwMMQMQMwMQMk.",
+    ".kkMMMMwwwMMMMMMMwMMMkk.",
+    "..kMwwwwwMMMQMQMQwQMQk..",
+    "...kMMMwwMMMMMMMwMMMk...",
+    "....kMMMMwQMQMQMwMQk....",
+    ".....kkMMMMMMMMMMkk.....",
+    "......kkkMQMQMQkkk......",
+    ".........kkkkkk........."
+  ]),
   logo: () => svg(grid(16, 16, (x, y) => {
     const d = Math.hypot(x - 7.5, y - 7.5), a = Math.atan2(y - 7.5, x - 7.5);
     if (d < 2.2) return "y";
